@@ -1,0 +1,50 @@
+.wrapper {
+  margin-top: 1rem;
+  margin-left: 12%;
+
+  .form-field-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+  input {
+    width: 90vw;
+  }
+
+    button {
+      background-color: #fff;
+      margin-left: 3%;
+       mat-icon {
+         color:rgb(168, 173, 173)
+       }
+    }
+  }
+
+  .img-grid-title {
+    :hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  .cards {
+
+    button {
+      border: 1px solid black;
+      height: 30px;
+      box-shadow: 2px 2px 2px black;
+    }
+    .card {
+      max-width: 400px;
+      width: 80%;
+      height:  80%;
+
+    }
+    img {
+      width: 95%;
+      height:  75%;
+    }
+  }
+
+}
+

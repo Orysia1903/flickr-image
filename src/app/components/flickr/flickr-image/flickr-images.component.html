@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="form-field-wrapper">
+    <mat-form-field>
+      <div style="text-align:center;">
+        <label>
+          <input matInput [formControl]="searchTagFormControl" placeholder="Search images at Flickr..." (keyup.enter)="loadImages(searchTagFormControl.value)" class="search-input"/>
+        </label>
+      </div>
+    </mat-form-field>
+
+    <button mat-mini-fab color="primary" (click)="loadImages(searchTagFormControl.value)">
+      <mat-icon>search icon</mat-icon>
+    </button>
+  </div>
+
+  <mat-paginator [length]="20"
+              [pageSize]="4"
+              [pageSizeOptions]="[5, 10, 15, 20]">
+  </mat-paginator>
+  <!-- A list of images in a 3-column grid. -->
+  <div class="cards">
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor='let image of images' class="img-grid-title">
+        <mat-card class="card" >
+          <img [src]='image?.media?.m' >
+          <mat-card-actions>
+            <button mat-button (click)="saveImage(image)">Bookmark it!</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
